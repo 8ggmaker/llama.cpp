@@ -969,9 +969,9 @@ static bool common_params_parse_ex(int argc, char ** argv, common_params_context
         params.kv_overrides.back().key[0] = 0;
     }
 
-    if (!params.tensor_buft_overrides.empty()) {
-        params.tensor_buft_overrides.push_back({nullptr, nullptr});
-    }
+    // if (!params.tensor_buft_overrides.empty()) {
+    //     params.tensor_buft_overrides.push_back({nullptr, nullptr});
+    // }
 
     if (params.reranking && params.embedding) {
         throw std::invalid_argument("error: either --embedding or --reranking can be specified, but not both");
@@ -2345,7 +2345,7 @@ common_params_context common_params_parser_init(common_params & params, llama_ex
                     throw std::invalid_argument("unknown buffer type");
                 }
                 // FIXME: this leaks memory
-                params.tensor_buft_overrides.push_back({strdup(tensor_name.c_str()), buft_list.at(buffer_type)});
+                // params.tensor_buft_overrides.push_back({strdup(tensor_name.c_str()), buft_list.at(buffer_type)});
             }
         }
     ));

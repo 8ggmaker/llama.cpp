@@ -940,12 +940,12 @@ struct cmd_params_instance {
         mparams.tensor_split = tensor_split.data();
         mparams.use_mmap     = use_mmap;
 
-        if (tensor_buft_overrides.empty()) {
-            mparams.tensor_buft_overrides = nullptr;
-        } else {
-            GGML_ASSERT(tensor_buft_overrides.back().pattern == nullptr && "Tensor buffer overrides not terminated with empty pattern");
-            mparams.tensor_buft_overrides = tensor_buft_overrides.data();
-        }
+        // if (tensor_buft_overrides.empty()) {
+        //     mparams.tensor_buft_overrides = nullptr;
+        // } else {
+        //     GGML_ASSERT(tensor_buft_overrides.back().pattern == nullptr && "Tensor buffer overrides not terminated with empty pattern");
+        //     mparams.tensor_buft_overrides = tensor_buft_overrides.data();
+        // }
 
         return mparams;
     }
